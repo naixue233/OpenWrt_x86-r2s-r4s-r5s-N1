@@ -20,7 +20,8 @@
 	};
 
 	chosen {
-		bootargs = "console=ttyS0,115200n1 loglevel=8 earlycon=uart8250,mmio32,0x11002000";
+		rootdisk = <&ubi_rootdisk>;
+		stdout-path = "serial0:115200n8";
 	};
 
 	memory@40000000 {
@@ -187,6 +188,22 @@
 				label = "factory";
 				reg = <0x180000 0x200000>;
 				read-only;
+
+				nvmem-layout {
+					compatible = "fixed-layout";
+					#address-cells = <1>;
+					#size-cells = <1>;
+
+					eeprom_factory_0: eeprom@0 {
+						reg = <0x0 0x1000>;
+					};
+
+					macaddr_factory_28: macaddr@28 {
+						compatible = "mac-base";
+						reg = <0x28 0x6>;
+						#nvmem-cell-cells = <1>;
+					};
+				};
 			};
 
 			partition@380000 {
@@ -210,6 +227,12 @@
 			partition@980000 {
 				label = "ubi";
 				reg = <0x980000 0x6e00000>;
+
+				volumes {
+					ubi_rootdisk: ubi-volume-fit {
+						volname = "fit";
+					};
+				};
 			};
 		};
 	};
