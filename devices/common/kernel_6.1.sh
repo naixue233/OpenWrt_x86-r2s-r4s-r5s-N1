@@ -1,5 +1,7 @@
 #!/bin/bash
 
+shopt -s extglob
+
 rm -rf target/linux package/kernel package/boot package/firmware package/network/config/wifi-scripts
 
 mkdir new; cp -rf .git new/.git
@@ -30,7 +32,7 @@ mkdir package/kernel/mt76/patches
 curl -sfL https://raw.githubusercontent.com/immortalwrt/immortalwrt/master/package/kernel/mt76/patches/0001-mt76-allow-VHT-rate-on-2.4GHz.patch -o package/kernel/mt76/patches/0001-mt76-allow-VHT-rate-on-2.4GHz.patch
 
 cd feeds/packages
-rm -rf libs net/coova-chilli net/xtables-addons net/jool kernel
+rm -rf libs/!(pcre) net/coova-chilli net/xtables-addons net/jool kernel
 git_clone_path master https://github.com/openwrt/packages libs
 git_clone_path master https://github.com/openwrt/packages net/coova-chilli
 git_clone_path master https://github.com/openwrt/packages net/xtables-addons
