@@ -83,11 +83,11 @@
  		;;
  	hinlink,opc-h68k|\
 @@ -67,7 +69,10 @@
- 	friendlyarm,nanopi-r2c-plus|\
  	friendlyarm,nanopi-r4s|\
  	friendlyarm,nanopi-r5s|\
--	friendlyarm,nanopi-r6s)
-+	friendlyarm,nanopi-r6s|\
+ 	friendlyarm,nanopi-r6s|\
+-	sinovoip,rk3568-bpi-r2pro)
++	sinovoip,rk3568-bpi-r2pro|\
 +	hinlink,opc-h66k|\
 +	hinlink,opc-h68k|\
 +	hinlink,opc-h69k)

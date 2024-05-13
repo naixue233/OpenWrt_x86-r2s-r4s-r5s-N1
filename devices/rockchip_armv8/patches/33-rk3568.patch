@@ -70,9 +70,9 @@ index 231bca2b544..0c4b2c55d9a 100644
  
  define U-Boot/fastrhino-r66s-rk3568
 @@ -355,8 +376,12 @@
-   rock-pi-e-rk3328 \
    rock64-rk3328 \
    radxa-cm3-io-rk3566 \
+   bpi-r2-pro-rk3568 \
 +  panther-x2-rk3566 \
    fastrhino-r66s-rk3568 \
    fastrhino-r68s-rk3568 \
@@ -157,7 +157,7 @@ index 231bca2b544..0c4b2c55d9a 100644
  		ucidef_set_interface_lan 'eth0'
  		;;
 @@ -75,9 +79,15 @@
- 	friendlyarm,nanopi-r6s|\
+ 	sinovoip,rk3568-bpi-r2pro|\
  	hinlink,opc-h66k|\
  	hinlink,opc-h68k|\
 -	hinlink,opc-h69k)
